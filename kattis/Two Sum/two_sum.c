@@ -1,3 +1,7 @@
+/* Jacobus Burger (2022)
+ * Two sum
+ * Add two numbers together
+ */
 #include <stdio.h>
 
 int

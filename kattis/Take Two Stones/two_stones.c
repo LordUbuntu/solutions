@@ -1,3 +1,7 @@
+/* Jacobus Burger (2022)
+ * Take two stones
+ * Choose winner based on evenness of stones
+ */
 #include <stdio.h>
 
 int

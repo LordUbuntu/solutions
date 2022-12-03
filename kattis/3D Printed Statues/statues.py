@@ -1,3 +1,4 @@
+# Jacobus Burger (2022)
 # 3d printed statues
 # we divide by 2 and sub 1 until we arrive at a value <= 0, step # is ans
 # credit to Yaacov for figuring out the final implementation here.
