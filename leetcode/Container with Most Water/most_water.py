@@ -1,7 +1,7 @@
 # Jacobus Burger (2023)
 # Container with most water problem
 # From https://leetcode.com/problems/container-with-most-water/description/
-# we use a greedy approach with a shrinking window
+# we use a greedy approach with a shrinking window from both sides
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         l, r = 0, len(height) - 1
