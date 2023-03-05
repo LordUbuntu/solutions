@@ -1,7 +1,6 @@
 # Jacobus Burger (2023)
 # Find the Index of the First Occurence in a String
 # See: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
-
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         # pass pointer h across the haystack until it matches the first character of needle

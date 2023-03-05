@@ -10,7 +10,6 @@ class Solution:
             return False
         return True
 
-
     # alternatively, we can use two counters to compare the strings
     #   as NeetCode demonstrated in [this vid](https://www.youtube.com/watch?v=99RVfqklbCE)
     def sol2(self, s: str, t: str) -> bool:
