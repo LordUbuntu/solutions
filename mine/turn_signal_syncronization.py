@@ -2,7 +2,7 @@
 # Background:
 #   While I was training with my team (Jimmy Kha, Yaacov Kotchakov) for
 #   the 2022 ICPC in February I came up with an interesting problem
-#   for us to solve on the spot.
+#   on the spot that we could solve. This is it.
 # Problem:
 #   You'll notice that in traffic the turn signals of cars all flash
 #   on and off at different intervals, flashing at different times,
