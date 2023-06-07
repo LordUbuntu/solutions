@@ -1,4 +1,3 @@
-
 /* Jacobus Burger 2023
  * desc:
  *      Write code to give the next traffic light colour for a given
