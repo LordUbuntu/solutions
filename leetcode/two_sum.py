@@ -34,3 +34,23 @@ class Solution:
             if minimum == ac:
                 a, b = a, c
         return [a, b] if a < b else [b, a]
+    # the real solution is to take the previous improvement idea and extend it.
+    # I forgot what a hashmap was but that is exactly what to use. Elements are
+    # added to the hashmap after looking at them. At each element, we subtract
+    # the value of the current element from the target and see if the result is
+    # in the hashmap. If it is, we return the indices of both elements to
+    # complete the sum.
+    #
+    # Once you realize you can trade linear space to get linear time, you
+    # realize that you can record 'visited' numbers and thus find the solution
+    # effectively.
+    #
+    # Lesson learned: don't overthing problems, remember basic structures, don't
+    # be afraid to make tradeoffs if it's fine to do so.
+    def two_sum(self, nums: List[int], target: int) -> List[int]:
+        visited_nums = {}  # value: index
+        for i in range(len(nums)):
+            difference = target - nums[i]
+            if difference in visited_nums:
+                return [visited_nums[difference], i]
+            visited_nums[nums[i]] = i
