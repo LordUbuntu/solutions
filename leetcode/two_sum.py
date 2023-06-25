@@ -48,9 +48,9 @@ class Solution:
     # Lesson learned: don't overthing problems, remember basic structures, don't
     # be afraid to make tradeoffs if it's fine to do so.
     def two_sum(self, nums: List[int], target: int) -> List[int]:
-        visited_nums = {}  # value: index
-        for i in range(len(nums)):
-            difference = target - nums[i]
-            if difference in visited_nums:
-                return [visited_nums[difference], i]
-            visited_nums[nums[i]] = i
+        visited = {}  # value : index
+        for index, value in enumerate(nums):
+            difference = target - value
+            if difference in visited:
+                return visited[difference], index
+            visited[value] = index
