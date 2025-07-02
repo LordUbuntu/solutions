@@ -1,4 +1,4 @@
-# Jacobus Burger (2022)
+# Jacobus Burger (2022-12-01)
 # Thanks to NeetCode for inspiring this problem (https://www.youtube.com/watch?v=Y0lT9Fck7qI)
 # Problem:
 #   how many ways can we climb n stairs in 1 or 2 steps at a time?

@@ -1,5 +1,5 @@
-# Jacobus Burger (2022)
-# I'm not sure if this problem exists elsewhere (it probably does).
+# Jacobus Burger (2022-12-09)
+# I'm not sure if this problem exists elsewhere (it does, "towers of hanoi").
 # Basically, try to determine the number of steps of a tower of n disks
 
 
