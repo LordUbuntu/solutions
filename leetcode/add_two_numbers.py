@@ -11,19 +11,20 @@ class ListNode:
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         solution = ListNode()
-        sol = solution
-        a = l1
-        b = l2
-        while (a is not None) and (b is not None):
-            s = (a.val if a is not None else 0) + (b.val if b is not None else 0)
-            c = s // 10
-            s = s % 10
+        head = solution
+        carry = 0
 
-            sol.val = sol.val + s
-            if (a.next is not None) and (b.next is not None):
-                sol.next = ListNode(val=c)
+        while (l1 is not None) and (l2 is not None) and carry == 0:
+            # calculate sum and carry of current digits
+            sum = (l1.val if l1 is not None else 0) + (l2.val if l2 is not None else 0) + carry
+            carry = sum // 10
 
-                a = a.next
-                b = b.next
-                sol = sol.next
-        return solution
+            # store values in current and next node
+            head.next = ListNode(val=sum % 10)
+
+            # progress to next digits
+            l1 = l1.next
+            l2 = l2.next
+            head = head.next
+
+        return solution.next
