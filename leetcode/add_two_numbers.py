@@ -1,4 +1,5 @@
 # WORK IN PROGRESS
+# This really shouldn't be a hard one to do... I'll come back with fresh eyes.
 
 # Definition for singly-linked list.
 class ListNode:
