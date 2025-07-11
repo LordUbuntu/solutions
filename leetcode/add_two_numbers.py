@@ -13,18 +13,12 @@ class Solution:
         solution = ListNode()
         head = solution
         carry = 0
-
-        while (l1 is not None) and (l2 is not None) and carry == 0:
-            # calculate sum and carry of current digits
+        while (l1 is not None) or (l2 is not None) or carry != 0:
             sum = (l1.val if l1 is not None else 0) + (l2.val if l2 is not None else 0) + carry
             carry = sum // 10
 
-            # store values in current and next node
             head.next = ListNode(val=sum % 10)
-
-            # progress to next digits
-            l1 = l1.next
-            l2 = l2.next
             head = head.next
-
+            l1 = (l1.next if l1 is not None else None)
+            l2 = (l2.next if l2 is not None else None)
         return solution.next
