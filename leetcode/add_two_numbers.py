@@ -7,14 +7,15 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 # Solution
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         solution = ListNode()
         head = solution
         carry = 0
-        while (l1 is not None) or (l2 is not None) or carry != 0:
-            sum = (l1.val if l1 is not None else 0) + (l2.val if l2 is not None else 0) + carry
+        while l1 or l2 or carry != 0:
+            sum = (l1.val if l1 else 0) + (l2.val if l2 else 0) + carry
             carry = sum // 10
 
             head.next = ListNode(val=sum % 10)
