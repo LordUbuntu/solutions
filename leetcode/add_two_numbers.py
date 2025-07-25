@@ -1,5 +1,6 @@
-# WORK IN PROGRESS
-# This really shouldn't be a hard one to do... I'll come back with fresh eyes.
+# Jacobus Burger (2025-07-10)
+# Solution to Add Two Numbers on LeetCode
+
 
 # Definition for singly-linked list.
 class ListNode:
@@ -9,6 +10,9 @@ class ListNode:
 
 
 # Solution
+# Stats:
+# - 5ms runtime, beats 42.55%
+# - 17.80MB memory, beats 84.93%
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         solution = ListNode()
