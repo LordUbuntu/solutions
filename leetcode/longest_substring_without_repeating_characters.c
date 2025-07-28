@@ -15,16 +15,17 @@ int lengthOfLongestSubstring(char* s) {
 
         // pwwke
         while (s[r] != '\0') {
-                for (int i = l; i < r; i++) {
-                        for (int j = l; i < r; j++) {
+                // check for any repeptitions
+                for (int i = l; i <= r; i++) {
+                        for (int j = l; i <= r; j++) {
                                 if (i == j)
                                         continue;
+                                // if repetition found, count length, slide window
                                 if (s[i] == s[j]) {
+                                        len = r - l > len ? r - l : len;
+                                        l++;
+                                        break;
                                 }
-                        if (s[i] == s[r]) {
-                                len = r - l > len ? r - l : len;
-                                l++;
-                                break;
                         }
                 }
                 r++;
@@ -34,6 +35,12 @@ int lengthOfLongestSubstring(char* s) {
 
 
 int main(void) {
-        char* s1 = "wwke";
+        char* s1 = "abcabcbb";
+        char* s2 = "bbbbb";
+        char* s3 = "pwwkew";
+        char* s4 = "au";
         printf("s1 %i\n", lengthOfLongestSubstring(s1));
+        printf("s2 %i\n", lengthOfLongestSubstring(s2));
+        printf("s3 %i\n", lengthOfLongestSubstring(s3));
+        printf("s4 %i\n", lengthOfLongestSubstring(s4));
 }
