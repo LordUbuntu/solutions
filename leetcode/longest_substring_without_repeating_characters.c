@@ -31,8 +31,16 @@ int lengthOfLongestSubstring(char* s) {
                 r++;
         }
 
-        // if null terminator reached, update len for final time
-        len = r - l > len ? r - l : len;
+        // count final time if no duplicates
+        bool repetition = false;
+        for (int i = l; i <= r; i++)
+                for (int j = i + 1; j <= r; j++)
+                        if (s[i] == s[j])
+                                repetition = true;
+        if (!repetition)
+                len = r - l > len ? r - l : len;
+        else
+                len = 1;
 
         // return solution
         return len;
