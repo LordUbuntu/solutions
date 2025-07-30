@@ -5,7 +5,37 @@
 
 
 int lengthOfLongestSubstring(char* s) {
-        return 0;
+        size_t l, r, len;
+        l = r = len = 0;
+
+        // scan the string until the null terminator
+        while (s[r]) {
+                // across the given window
+                for (int i = l; i <= r; i++) {
+                        // if window is closed, count and widen
+                        if (l == r) {
+                                len = r - l > len ? r - l : len;
+                                r++;
+                                break;
+                        }
+                        // if any duplicates are found, count and narrow
+                        for (int j = i + 1; j <= r; j++) {
+                                if (s[i] == s[j]) {
+                                        len = r - l > len ? r - l : len;
+                                        l++;
+                                        break;
+                                }
+                        }
+                }
+                // if the window passes, widen it
+                r++;
+        }
+
+        // if null terminator reached, update len for final time
+        len = r - l > len ? r - l : len;
+
+        // return solution
+        return len;
 }
 
 
@@ -14,6 +44,7 @@ int main(void) {
         char* s2 = "bbbbb";
         char* s3 = "pwwkew";
         char* s4 = "au";
+        // 3 4 3 2
         printf("s1 %i\n", lengthOfLongestSubstring(s1));
         printf("s2 %i\n", lengthOfLongestSubstring(s2));
         printf("s3 %i\n", lengthOfLongestSubstring(s3));
