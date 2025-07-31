@@ -31,17 +31,6 @@ int lengthOfLongestSubstring(char* s) {
                 r++;
         }
 
-        // count final time if no duplicates
-        bool repetition = false;
-        for (int i = l; i <= r; i++)
-                for (int j = i + 1; j <= r; j++)
-                        if (s[i] == s[j])
-                                repetition = true;
-        if (!repetition)
-                len = r - l > len ? r - l : len;
-        else
-                len = 1;
-
         // return solution
         return len;
 }
@@ -55,6 +44,7 @@ int main(void) {
         char* s4 = "au";
         // 3 4 3 2
         // 2025-07-30 1 1 3 2
+        // 2025-07-30 3 1 3 0
         printf("s1 %i\n", lengthOfLongestSubstring(s1));
         printf("s2 %i\n", lengthOfLongestSubstring(s2));
         printf("s3 %i\n", lengthOfLongestSubstring(s3));
