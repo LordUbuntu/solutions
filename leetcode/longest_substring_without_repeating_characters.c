@@ -4,18 +4,18 @@
 #include <string.h>
 
 
+// first successful solution, 2025-07-31
 int lengthOfLongestSubstring(char* s) {
         size_t l, r, len;
         l = r = len = 0;
 
-        // scan the string until the null terminator
+        // scan the string
         while (s[r]) {
                 // across the given window
                 for (int i = l; i <= r; i++) {
                         // if window is closed, count and widen
                         if (l == r) {
                                 len = r - l > len ? r - l : len;
-                                // r++ will be handled because of break
                                 break;
                         }
                         // if any duplicates are found, count and narrow
@@ -27,11 +27,11 @@ int lengthOfLongestSubstring(char* s) {
                                 }
                         }
                 }
-                // if the window passes, widen it
+                // widen window
                 r++;
         }
 
-        // update length final time upon termination if no repetition
+        // update length at end if no repetitions found
         bool rep = false;
         for (int i = l; i <= r; i++)
                 for (int j = i + 1; j <= r; j++)
@@ -51,10 +51,6 @@ int main(void) {
         char* s2 = "bbbbb";
         char* s3 = "pwwkew";
         char* s4 = "au";
-        // 3 4 3 2
-        // 2025-07-30 1 1 3 2
-        // 2025-07-30 3 1 3 0
-        // 2025-07-31 3 1 3 2 YES
         printf("s1 %i\n", lengthOfLongestSubstring(s1));
         printf("s2 %i\n", lengthOfLongestSubstring(s2));
         printf("s3 %i\n", lengthOfLongestSubstring(s3));
