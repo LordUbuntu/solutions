@@ -4,6 +4,10 @@
 #include <string.h>
 
 
+// an improvement might be to flip logic and only count it when an iteration passes checks?
+// Would be good to look at other solutions to this problem
+
+
 // first successful solution, 2025-07-31
 int lengthOfLongestSubstring(char* s) {
         size_t l, r, len;
