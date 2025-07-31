@@ -15,7 +15,7 @@ int lengthOfLongestSubstring(char* s) {
                         // if window is closed, count and widen
                         if (l == r) {
                                 len = r - l > len ? r - l : len;
-                                r++;
+                                // r++ will be handled because of break
                                 break;
                         }
                         // if any duplicates are found, count and narrow
@@ -48,11 +48,13 @@ int lengthOfLongestSubstring(char* s) {
 
 
 int main(void) {
+        // correct: 3 1 3 2
         char* s1 = "abcabcbb";
         char* s2 = "bbbbb";
         char* s3 = "pwwkew";
         char* s4 = "au";
         // 3 4 3 2
+        // 2025-07-30 1 1 3 2
         printf("s1 %i\n", lengthOfLongestSubstring(s1));
         printf("s2 %i\n", lengthOfLongestSubstring(s2));
         printf("s3 %i\n", lengthOfLongestSubstring(s3));
