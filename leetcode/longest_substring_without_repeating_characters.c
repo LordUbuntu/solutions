@@ -4,10 +4,21 @@
 #include <string.h>
 
 
+// alternative approach: record occurences of ascii characters (their
+//      ascii value being their index in the array) and when it is
+//      encountered again, then skip. Still using a sliding window,
+//      though that too can be passed on by using a counter that gets
+//      reset by repetitions, i'll need to investigate that idea...
+// another inspiration could be to use something like a monotonic
+//      queue, a "set" kind of, which will count its length and reset
+//      when a duplicate is encountered.
+int length_hash(char* s) {
+        int i = 0;
+        char occurence[128];
+}
+
+
 // an improvement might be to flip logic and only count it when an iteration passes checks?
-// Would be good to look at other solutions to this problem
-
-
 // first successful solution, 2025-07-31
 int lengthOfLongestSubstring(char* s) {
         size_t l, r, len;
